@@ -17,16 +17,13 @@
   # Network configuration
   networking = {
     firewall.enable = false;
-    hostName = "nix-llm";
+    hostName = "nix-ollama";
     interfaces.ens18 = {
-      useDHCP = false;
-      ipv4.addresses = [{
-        address = "10.42.37.100";
-        prefixLength = 24;
+      useDHCP = true;
       }];
     };
-    defaultGateway = "10.42.37.254";
-    nameservers = [ "10.42.37.254" ];
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.1" ];
   };
 
   # System localization
